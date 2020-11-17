@@ -9,6 +9,7 @@ class RegisterMobx = RegisterMobxBase with _$RegisterMobx;
 
 abstract class RegisterMobxBase with Store {
   final _storageData = StorageData();
+  final _helper = Helper();
 
   @observable
   String name = '';
@@ -35,17 +36,17 @@ abstract class RegisterMobxBase with Store {
   @action
   Future<void> register() async {
     await _storageData.insert(Associated(
-      name: name,
-      cpf: cpf,
-      birthdate: birthdate,
-      amount: amount,
-      documentImage: documentImage,
-      status: 'Pendente'
+        name: name,
+        cpf: cpf,
+        birthdate: birthdate,
+        amount: amount,
+        documentImage: documentImage,
+        status: 'Pendente'
     ));
   }
 
   @action
   Future<void> document() async {
-    documentImage = await Helper.takePhoto();
+    documentImage = await _helper.takePhoto();
   }
 }

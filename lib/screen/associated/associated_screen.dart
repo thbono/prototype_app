@@ -113,15 +113,15 @@ class _AssociatedScreenState extends State<AssociatedScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(associated.name, style: GoogleFonts.nunito(fontSize: 16, color: Colors.white,),),
-                  Text(associated.cpf, style: GoogleFonts.nunito(fontSize: 16, color: Colors.white,),),
+                  Text(associated.name ?? '', style: GoogleFonts.nunito(fontSize: 16, color: Colors.white,),),
+                  Text(associated.cpf ?? '', style: GoogleFonts.nunito(fontSize: 16, color: Colors.white,),),
                 ],
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Icon(LineIcons.clock_o, color: Colors.white,),
-                  Text(associated.status, style: GoogleFonts.nunito(fontSize: 16, color: Colors.white,),),
+                  Text(associated.status ?? '', style: GoogleFonts.nunito(fontSize: 16, color: Colors.white,),),
                 ],
               ),
             ],
