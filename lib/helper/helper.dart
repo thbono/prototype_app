@@ -9,7 +9,8 @@ class Helper {
   Future<String> takePhoto() async {
     String result;
 
-    await _picker.getImage(source: ImageSource.camera).then((file) {
+    await _picker.getImage(source: ImageSource.camera,
+        imageQuality: 50).then((file) {
       if (file != null) {
         result = _encodeImage(file);
       }
